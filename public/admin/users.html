@@ -144,13 +144,13 @@
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
   <script src="../assets/vendors/art-template/template-web.js"></script>
-  <script>NProgress.done()</script>
   <script src="../assets/js/user.js"></script>
+  <script>NProgress.done()</script>
   <!-- 用户列表模板 -->
   <script type="text/html" id="userTpl">
     {{each data}}
     <tr>
-        <td class="text-center"><input type="checkbox" class="userStatus"></td>
+        <td class="text-center"><input type="checkbox" class="userStatus" data-id="{{$value._id}}"></td>
         <td class="text-center">
           {{if $value.avatar}}
           <img class="avatar" src="{{$value.avatar}}" >

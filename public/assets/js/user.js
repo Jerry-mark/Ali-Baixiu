@@ -131,3 +131,22 @@ $('#userBox').on('change','.userStatus',function () {
         deleteMany.hide()
     }
 })
+// 为批量删除按钮添加点击事件
+deleteMany.on('click',function () {
+    let ids = []
+    // 获取选中的用户
+    let checkedUser = $('#userBox').find('input').filter(':checked')
+    // 循环复选框 从复选框元素的身上获取data-id属性的值
+    checkedUser.each(function (index,element) {
+        ids.push($(element).attr('data-id'))
+    })
+    if (confirm('您真的要确定进行批量删除操作吗？')) {
+        $.ajax({
+            type:'delete',
+            url:'/users/'+ids.join('-'),
+            success:function () {
+                location.reload()
+            }
+        })
+    }
+})
