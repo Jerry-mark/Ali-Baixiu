@@ -54,3 +54,18 @@ $('#formBox').on('submit', '#modifyCategory', function () {
     // 阻止表单的默认提交行为
     return false
 })
+// 当删除按钮被点击的时候
+$('#categoryBox').on('click', '.delete', function () {
+    if (confirm('您真的要执行删除操作吗？')) {
+        // 获取要删除的分类数据id
+        let id = $(this).attr('data-id')
+        // 向服务器端发送请求 删除分类数据
+        $.ajax({
+            type:'delete',
+            url:'/categories/'+id,
+            success:function () {
+                location.reload()
+            }
+        })
+    }
+})

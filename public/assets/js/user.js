@@ -123,7 +123,7 @@ $('#userBox').on('change','.userStatus',function () {
         selectAll.prop('checked',false)
     }
     // 如果选中的复选框的数量大于0 就说明有选中的复选框
-    if (inputs.filter(':checked').length > 0) {
+    if (inputs.filter(':checked').length > 1) {
         // 显示批量删除按钮
         deleteMany.show()
     } else {
