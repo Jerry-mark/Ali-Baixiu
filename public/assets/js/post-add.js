@@ -61,7 +61,6 @@ if (id != -1) {
                     response.res = res
                     $('#parentsBox').html(template('modifyTpl',response))
                 }
-
             })
         }
     })

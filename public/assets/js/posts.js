@@ -3,19 +3,12 @@ $.ajax({
 	type: 'get',
 	url: '/posts',
 	success: function (response) {
-		var html = template('postsTpl', response);
-		$('#postsBox').html(html);
-		var page = template('pageTpl', response);
-		$('#page').html(page);
+		$('#postsBox').html(template('postsTpl', response));
+		$('#page').html(template('pageTpl', response));
 	}
 });
 
-// 处理日期时间格式
-function formateDate(date) {
-	// 将日期时间字符串转换成日期对象
-	date = new Date(date);
-	return date.getFullYear() + '-' + (date.getMonth() + 1).toString().padStart(2, 0) + '-' + date.getDate().toString().padStart(2, 0)
-}
+
 
 // 分页
 function changePage(page) {
@@ -27,9 +20,8 @@ function changePage(page) {
 			page: page
 		},
 		success: function (response) {
-			var html = template('postsTpl', response);
-			$('#postsBox').html(html);
-			var page = template('pageTpl', response);
+			$('#postsBox').html(template('postsTpl', response));
+			$('#page').html(template('pageTpl', response))
 		}
 	});
 }
@@ -39,9 +31,7 @@ $.ajax({
 	type: 'get',
 	url: '/categories',
 	success: function (response) {
-		// console.log(response)
-		var html = template('categoryTpl', { data: response });
-		$('#categoryBox').html(html);
+		$('#categoryBox').html(template('categoryTpl', { data: response }));
 	}
 })
 
@@ -49,14 +39,12 @@ $.ajax({
 $('#filterForm').on('submit', function () {
 	// 获取到管理员选择的过滤条件
 	var formData = $(this).serialize();
-	console.log(formData)
 	// 向服务器端发送请求 根据条件索要文章列表数据
 	$.ajax({
 		type: 'get',
 		url: '/posts',
 		data: formData,
 		success: function (response) {
-			console.log(response);
 			$('#postsBox').html(template('postsTpl', response));
 			$('#page').html(template('pageTpl', response));
 		}

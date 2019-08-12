@@ -1,3 +1,9 @@
+<script src="/login/status"></script>
+<script>
+  if (!isLogin) {
+    location.href = 'login.html'
+  }
+</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -117,6 +123,7 @@
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
   <script src="../assets/vendors/art-template/template-web.js"></script>
   <script src="../assets/js/post-add.js"></script>
+  <script src="../assets/js/common.js"></script>
   <script type="text/html" id="categoryTpl">
     {{each data}}
     <option value="{{$value._id}}">{{$value.title}}</option>

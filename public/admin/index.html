@@ -1,11 +1,12 @@
 <script src="/login/status"></script>
 <script>
-  if(!isLogin) {
+  if (!isLogin) {
     location.href = 'login.html'
   }
 </script>
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="utf-8">
   <title>Dashboard &laquo; Admin</title>
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="../assets/css/admin.css">
   <script src="../assets/vendors/nprogress/nprogress.js"></script>
 </head>
+
 <body>
   <script>NProgress.start()</script>
 
@@ -38,10 +40,10 @@
             <div class="panel-heading">
               <h3 class="panel-title">站点内容统计：</h3>
             </div>
-            <ul class="list-group">
-              <li class="list-group-item"><strong>10</strong>篇文章（<strong>2</strong>篇草稿）</li>
-              <li class="list-group-item"><strong>6</strong>个分类</li>
-              <li class="list-group-item"><strong>5</strong>条评论（<strong>1</strong>条待审核）</li>
+            <ul class="list-group" id="indexBox">
+              <li class="list-group-item" id="post"></li>
+              <li class="list-group-item" id="class"> </li>
+              <li class="list-group-item" id="comment"></li>
             </ul>
           </div>
         </div>
@@ -90,7 +92,10 @@
 
   <script src="../assets/vendors/jquery/jquery.js"></script>
   <script src="../assets/vendors/bootstrap/js/bootstrap.js"></script>
+  <script src="../assets/js/index.js"></script>
+
   <script>NProgress.done()</script>
   <script src="../assets/js/common.js"></script>
 </body>
+
 </html>
