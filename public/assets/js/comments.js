@@ -3,6 +3,7 @@ $.ajax({
     type: 'get',
     url: '/comments',
     success: function (response) {
+        console.log(response)
         $('#commentsBox').html(template('commentsTpl', response))
         $('#pageBox').html(template('pageTpl', response))
     }

@@ -44,7 +44,7 @@ $.ajax({
             // 将logo地址存储在隐藏域中
             $('#hiddenLogo').val(response.logo)
             // 将logo显示在页面
-            $('#imageBig').attr('src',response.logo)
+            $('#logoBig').attr('src',response.logo)
             // 将网站标题显示在页面中
             $('input[name="title"]').val(response.title)
             // 将是否开启评论功能显示在页面中
