@@ -54,7 +54,7 @@ $('#comment').on('submit', 'form', function () {
 
     // 向服务器端发送请求 执行添加评论操作
     $.ajax({
-        type: 'get',
+        type: 'post',
         url: '/comments',
         data: {
             content: content,
